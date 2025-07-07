@@ -11,11 +11,12 @@ WORKDIR /app
 
 # Make entrypoint script executable
 COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+RUN chmod +x /entrypoint.sh && \
+    sed -i 's/\r$//' /entrypoint.sh
 
 # Expose port
 EXPOSE 8000
 EXPOSE 8082
 
 # Use entrypoint script
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]

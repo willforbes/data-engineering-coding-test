@@ -93,10 +93,10 @@ Find films similar to a specific film:
 
 ```bash
 # Find similar films to a specific film ID
-curl "http://localhost:8000/similar_films/tt0111161"
+curl "http://localhost:8000/similar_films/123"
 
 # With custom similarity threshold (default: 50.0)
-curl "http://localhost:8000/similar_films/tt0111161?threshold=70.0"
+curl "http://localhost:8000/similar_films/456?threshold=70.0"
 ```
 
 **Parameters:**
