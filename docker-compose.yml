@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  films-app:
+    build: .
+    ports:
+      - "8000:8000"
+      - "8082:8082"
+    environment:
+      - PYTHONPATH=/app
+    volumes:
+      - .:/app

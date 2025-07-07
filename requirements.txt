@@ -1,0 +1,9 @@
+fastapi
+great-expectations
+pyspark
+pyarrow
+pytest
+pandas
+luigi
+httpx
+uvicorn

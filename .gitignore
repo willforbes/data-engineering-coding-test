@@ -1,0 +1,9 @@
+.DS_Store
+.venv/
+artifacts/
+.pytest_cache/
+*.pyc
+*.log
+*.db
+output/
+.vscode/
