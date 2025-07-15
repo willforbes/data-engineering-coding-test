@@ -2,7 +2,7 @@ from fastapi import FastAPI, Query
 from typing import List, Optional
 from api.data import fetch_all_films, filter_list_column
 from api.film_similarity import FilmSimilarityFinder
-
+from datetime import datetime
 
 app = FastAPI()
 
@@ -37,9 +37,13 @@ def filter_films(
         filtered_df = filtered_df[filtered_df["adult"] == adult]
 
     if release_year_min is not None:
-        filtered_df = filtered_df[filtered_df["release_year"] >= release_year_min]
+        filtered_df = filtered_df[
+            filtered_df["release_year"] >= datetime(release_year_min, 1, 1)
+        ]
     if release_year_max is not None:
-        filtered_df = filtered_df[filtered_df["release_year"] <= release_year_max]
+        filtered_df = filtered_df[
+            filtered_df["release_year"] <= datetime(release_year_max, 1, 1)
+        ]
 
     if duration_min is not None:
         filtered_df = filtered_df[filtered_df["durationMins"] >= duration_min]
