@@ -177,7 +177,7 @@ class GenreSplitCoordinatorTask(luigi.Task):
             genre_tasks.append(task)
 
         # Run all genre tasks
-        luigi.build(genre_tasks, local_scheduler=True)
+        luigi.build(genre_tasks, scheduler_host="localhost", scheduler_port=8082)
 
         print("GenreSplitCoordinatorTask completed - all genres processed")
         # Create the success file
